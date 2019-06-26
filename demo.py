@@ -121,7 +121,7 @@ def preprocess_image(img_path, json_path=None):
 
 
 def main(img_path, json_path=None):
-    sess = tf.Session()
+    sess = tf.compat.v1.Session()
     model = RunModel(config, sess=sess)
 
     input_img, proc_param, img = preprocess_image(img_path, json_path)
@@ -190,6 +190,9 @@ def main(img_path, json_path=None):
 
 def join_csv():
   path = 'hmr/output/csv/'                   
+  all_files = glob.glob(os.path.join(path, "*.csv")    )
+
+  #df_from_each_file = (pd.read_csv(f) for f in sorted(all_files))
   all_files = glob.glob(os.path.join(path, "*.csv"))
   all_files.sort(key=lambda x: int(x.split('/')[-1].split('.')[0]))
   df_from_each_file = (pd.read_csv(f) for f in all_files)
