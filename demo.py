@@ -211,7 +211,7 @@ if __name__ == '__main__':
 
     renderer = vis_util.SMPLRenderer(face_path=config.smpl_face_path)
 
-    print("[CONFIG] img_path ", img_path, "json_path:", json_path )
+    print("[CONFIG] img_path ", config.img_path, "json_path:", config.json_path )
     main(config.img_path, config.json_path)
     
     join_csv()
