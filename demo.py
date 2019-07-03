@@ -131,9 +131,9 @@ def main(img_path, json_path=None):
     joints, verts, cams, joints3d, theta = model.predict(
         input_img, get_theta=True)
 
-#     print('JOINTS 3D:')
-#     print(joints3d.shape)
-#     print(joints3d)
+    print('JOINTS 3D:')
+    print(joints3d.shape)
+    print(joints3d)
 
     joints_names = ['Ankle.R_x', 'Ankle.R_y', 'Ankle.R_z',
                    'Knee.R_x', 'Knee.R_y', 'Knee.R_z',
